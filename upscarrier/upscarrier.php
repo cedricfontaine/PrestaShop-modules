@@ -659,7 +659,7 @@ class UpsCarrier extends CarrierModule
 			$this->_postErrors[]  = $this->l('Your country is not specified');
 		elseif (Tools::getValue('ups_carrier_pickup_type') == NULL OR Tools::getValue('ups_carrier_pickup_type') == 0)
 			$this->_postErrors[]  = $this->l('Your pickup type is not specified');
-		elseif (Tools::getValue('ups_carrier_packaging_type') == NULL OR Tools::getValue('ups_carrier_packaging_type') == 0)
+		elseif ((Tools::getValue('ups_carrier_packaging_type') == NULL OR Tools::getValue('ups_carrier_packaging_type') == 0) && Tools::getValue('ups_carrier_packaging_type') != "00")
 			$this->_postErrors[]  = $this->l('Your packaging type is not specified');
 		elseif (Tools::getValue('ups_carrier_rate_service_group') == NULL OR Tools::getValue('ups_carrier_rate_service_group') == 0)
 			$this->_postErrors[]  = $this->l('Your rate service group is not specified');
